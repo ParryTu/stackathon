@@ -4,7 +4,7 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 import translate from "translate";
 import { connect } from "react-redux";
-import { translateText } from "../../app/store";
+import { translateText } from "../../app/translateRedux";
 
 let GOOGLE_KEY =
   "/Users/parrytu/Downloads/civil-rarity-348820-c558a10d6b64.json";
@@ -48,15 +48,17 @@ function Box(props) {
     console.log(text);
   }
 
-  function clickTranslate() {
-    let a = props.translateThuck(text);
-    setTranslation(a);
-    console.log(translatedText);
-    //console.log(example);
-  }
+  let demo = {
+    hello: "你好",
+    goodbye: "再见",
+  };
+
+  function clickTranslate() {}
 
   return (
     <>
+      {" "}
+      <h1>Deep Talk Natural Language Interpreter </h1>
       <div>
         <p>Microphone: {listening ? "on, speak now" : "off"}</p>
         <button onClick={SpeechRecognition.startListening}>Start</button>
